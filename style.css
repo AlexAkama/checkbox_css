@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0 50px;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 30px 20px 5px 50px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+label {
+    margin-bottom: 25px;
+    display: block;
+}
+
+
+/* прячем стандартные чекбоксы, */
+/* причем НЕ используем display: none */
+/* т.к. это     свойство заблокирует доступ к объекту */
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.check-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0EA36E;
+    margin-left: -20px;
+}
+
+.checkbox:checked+.check-icon::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #0EA36E;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.checkbox:disabled+.check-icon {
+    border-color: #CCCCCC;
+}
+
+.checkbox:checked:disabled+.check-icon::before {
+    background-color: #CCCCCC;
+}
+
+.checkbox:focus+.check-icon {
+    box-shadow: 0 0 0 2px #000000;
+}
+
+
+/* checkbox с произвольным рисунком внутри */
+
+.img-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.img-check-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0EA36E;
+    margin-left: -20px;
+}
+
+.img-checkbox:disabled+.img-check-icon {
+    border-color: #CCCCCC;
+}
+
+.img-checkbox:focus+.img-check-icon {
+    box-shadow: 0 0 0 2px #000000;
+}
+
+.img-checkbox:checked+.img-check-icon {
+    background-image: url(check-on-icon.svg);
+}
+
+.img-checkbox:disabled:checked+.img-check-icon {
+    background-image: url(check-on-disabled-icon.svg);
+}
+
+
+/* radio button  */
+.radio-btn {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.radio-btn-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0EA36E;
+    margin-left: -20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.radio-btn:checked+.radio-btn-icon::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #0EA36E;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.radio-btn:disabled+.radio-btn-icon {
+    border-color: #CCCCCC;
+}
+
+.radio-btn:checked:disabled+.radio-btn-icon::before {
+    background-color: #CCCCCC;
+}
+
+.radio-btn:focus+.radio-btn-icon {
+    box-shadow: 0 0 0 2px #000000;
+}
